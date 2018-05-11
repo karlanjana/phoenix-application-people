@@ -1,5 +1,6 @@
 defmodule People.Person do 
-	use PeopleWeb, :model
+	use Ecto.Schema
+  	import Ecto.Changeset
 
 	schema "people" do
 		field :name, :string
