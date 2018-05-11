@@ -9,6 +9,11 @@ defmodule PeopleWeb.PersonController do
     render conn, "index.html", people: people
   end
 
+  def show(conn, %{"id" => id}) do
+  	person = Repo.get!(Person,id)
+    render conn, "show.html", person: person
+  end
+
   def new(conn, _params) do
 	changeset = Person.changeset(%Person{} ,%{})
 	render conn, "new.html", changeset: changeset
@@ -19,14 +24,11 @@ defmodule PeopleWeb.PersonController do
 
 		case Repo.insert(changeset) do 
 			{:ok, _person} -> 
-				IO.puts "****************"
 				conn
         		|> put_flash(:info, "Person created successfully.")
         		|> redirect(to: person_path(conn, :index))
 			{:error, changeset} -> 
-				IO.puts "++++++++++++++++++"
-				IO.puts inspect changeset
 				render conn, "new.html", changeset: changeset
 		end
-	end
+  end
 end
