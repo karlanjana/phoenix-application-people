@@ -17,6 +17,8 @@ defmodule PeopleWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PersonController, :index
+    get "/create", PersonController, :new
+    post "/create", PersonController, :create
   end
 
   # Other scopes may use custom stacks.

@@ -1,13 +1,13 @@
 <h3>People at Sopost</h3>
 
-<ul class="collection">
+<ul class="list-group">
 	<%= for person <- @people do %>
-		<li class="collection-item">
-			Name: <%= person.name %>
-		</li>
-		<li class="collection-item">
-			Picture: <img src= <%= person.photo %> >
-		</li>
+		<div class="row">
+			<li class="list-group-item">
+				<%= person.name %>
+				<img src= <%= person.photo %> class="img-thumbnail">
+			</li>
+		</div>
 
 	<% end %>
 
