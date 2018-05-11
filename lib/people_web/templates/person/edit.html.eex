@@ -1,0 +1,31 @@
+<h3>Edit person</h3>
+
+<%= form_for @changeset, person_path(@conn, :update, @person), fn f -> %>
+
+	<div class="form-group">
+		<%= label f, :name, class: "control-label" %>
+		<%= text_input f, :name, class: "form-control" %>
+		<%= error_tag f, :name %>
+	</div>
+
+	<div class="form-group">
+		<%= label f, :title, class: "control-label" %>
+		<%= text_input f, :title, class: "form-control" %>
+		<%= error_tag f, :title %>
+	</div>
+
+	<div class="form-group">
+		<%= label f, :location, class: "control-label" %>
+		<%= text_input f, :location, class: "form-control" %>
+		<%= error_tag f, :location %>
+	</div>
+
+	<div class="form-group">
+		<%= label f, :photo, class: "control-label" %>
+		<%= text_input f, :photo, class: "form-control" %>
+		<%= error_tag f, :photo %>
+	</div>
+
+	<%= submit "Update Person", class: "btn btn-primary" %>
+
+<% end %>

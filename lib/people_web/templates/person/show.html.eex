@@ -1,0 +1,20 @@
+<ul class="collection">
+  <li class="list-group-item">
+    <strong>Name:</strong>
+    <%= @person.name %>
+  </li>
+
+  <li class="list-group-item">
+    <strong>Title:</strong>
+    <%= @person.title %>
+  </li>
+
+  <li class="list-group-item">
+    <strong>Location:</strong>
+    <%= @person.location %>
+  </li>
+
+  <li class="list-group-item">
+    <img src= <%= @person.photo %> class="img-thumbnail" >
+  </li>
+</ul>

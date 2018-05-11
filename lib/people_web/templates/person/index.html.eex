@@ -1,0 +1,14 @@
+<h3>People at Sopost</h3>
+
+<ul class="list-group">
+	<%= for person <- @people do %>
+			<li class="list-group-item">
+				<%= person.name %>
+				<img src= <%= person.photo %> class="img-thumbnail">
+				<%= link "Edit", to: person_path(@conn, :edit, person), class: "btn btn-primary" %>
+			</li>
+
+	<% end %>
+
+	
+</ul>
